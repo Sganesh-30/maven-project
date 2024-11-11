@@ -6,6 +6,15 @@ pipeline
     retries 2
   }
 }
+
+parameters {
+  string defaultValue: 'S', name: 'LASTNAME'
+}
+
+environment {
+    NAME = Ganesh
+}
+
 tools {
     maven 'mymaven'
 }
@@ -14,6 +23,7 @@ stages {
     {
         steps {
             sh 'mvn clean package'
+            echo "Hello $NAME ${params.LASTNAME}"
         }
         post {
         success {
