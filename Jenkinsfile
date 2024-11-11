@@ -12,9 +12,8 @@ parameters {
 }
 
 environment {
-    NAME = Ganesh
+    NAME = "Ganesh"
 }
-
 tools {
     maven 'mymaven'
 }
